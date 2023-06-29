@@ -1,0 +1,39 @@
+﻿<Window x:Class="ItCompanyInfocarat.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ItCompanyInfocarat"
+        mc:Ignorable="d" Style="{DynamicResource MyStyle}" WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Title="MainWindow" Height="1024" Width="1440">
+    <Grid>
+        <StackPanel Orientation="Vertical" Margin="123 69 0 0">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0 0 0 52">
+                <StackPanel VerticalAlignment="Top" Orientation="Vertical" HorizontalAlignment="Left" Margin="0 0 90 0">
+                    <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0 0 0 165">
+                        <Image Source="Images/logoInfocarat.png" Height="60" Width="316"></Image>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Center">
+                        <TextBlock TextAlignment="Center" Style="{StaticResource TextBold40px}" Margin="0 0 0 62">Добро пожаловать!</TextBlock>
+                        <TextBlock Style="{StaticResource TextRegular20px}" Margin="42 0 0 16">Имя пользователя</TextBlock>
+                        <TextBox x:Name="username" Height="77" Width="597" Style="{StaticResource EnterBox}" Margin="0 0 0 25"></TextBox>
+                        <TextBlock Style="{StaticResource TextRegular20px}" Margin="42 0 0 16">Пароль</TextBlock>
+                        <PasswordBox x:Name="password" Style="{StaticResource PasswordBox}" Height="77" Width="597" Margin="0 0 0 46"></PasswordBox>
+                        <Button Height="67" Width="359" Style="{StaticResource ActiveButton}" Template="{StaticResource NoMouseOverButtonTemplate}" Click="ButtonLogin_Click">Войти</Button>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Image Source="Images/loginImage.png" Height="518" Width="533"></Image>
+                </StackPanel>
+            </StackPanel>
+            <TextBlock Style="{StaticResource TextRegular20px}">
+                Доступ к системе имеют только зарегестрированные пользователи. Для регистрации обратитесь к руководству нашей <LineBreak/>компании :)
+            </TextBlock>
+        </StackPanel>
+        
+        
+        
+        
+    </Grid>
+</Window>

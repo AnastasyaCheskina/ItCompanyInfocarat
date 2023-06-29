@@ -1,0 +1,55 @@
+﻿<Window x:Class="ItCompanyInfocarat.StatisticForAdmin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ItCompanyInfocarat"
+        mc:Ignorable="d" Style="{DynamicResource MyStyle}" WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Title="StatisticForAdmin" Height="1024" Width="1440">
+    <Grid>
+        <StackPanel Orientation="Vertical" Margin="123 69 0 0">
+            <StackPanel Orientation="Horizontal" Margin="0 0 0 100">
+                <Image Source="Images/logoInfocarat.png" Height="60" Width="316" Margin="0 0 237 0"></Image>
+                <Button Style="{StaticResource ActiveButtonSmallText}" Template="{StaticResource NoMouseOverButtonTemplate}" Margin="0 0 24 0" Height="60" Width="554" Click="ToMainPage">Вернуться на главную</Button>
+                <Button Style="{StaticResource transparentBtn}" Template="{StaticResource NoMouseOverButtonTemplate}" Click="Button_Click">
+                    <Image Source="Images/iconUser.png" Height="60" Width="60"></Image>
+                </Button>
+            </StackPanel>
+            <TextBlock Style="{StaticResource TextBold48px}" Text="Статистика работы за месяц" Margin="0 0 0 39"></TextBlock>
+            <StackPanel Orientation="Vertical" MaxWidth="1191" Background="White" HorizontalAlignment="Left">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Клиент" Style="{StaticResource TextTableHeader}" Height="67" Width="420" Margin="0 0 5 0"></TextBlock>
+                    <TextBlock Text="Детали" Style="{StaticResource TextTableHeader}" Height="67" Width="389" Margin="0 0 7 0"></TextBlock>
+                    <TextBlock Text="Дата" Style="{StaticResource TextTableHeader}" Height="67" Width="370"></TextBlock>
+                </StackPanel>
+            </StackPanel>
+            <ListView x:Name="allApplications" BorderBrush="Transparent" Background="Transparent" Margin="0 0 0 60" MaxHeight="450">
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="{x:Type ListViewItem}">
+                        <Setter Property="Background" Value="Transparent" />
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type ListViewItem}">
+                                    <ContentPresenter />
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ListView.ItemContainerStyle>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Vertical" MaxWidth="1191" MaxHeight="526" Background="White" HorizontalAlignment="Left">
+                            <StackPanel Orientation="Horizontal" Margin="0 0 0 14">
+                                <TextBlock Text="{Binding Applications.Clients.name}" Style="{StaticResource TextTable}" Height="67" Width="420" Margin="0 0 5 0"></TextBlock>
+                                <TextBlock Text="{Binding Applications.details}" Style="{StaticResource TextTable}" Height="67" Width="389" Margin="0 0 7 0"></TextBlock>
+                                <TextBlock Text="{Binding Applications.data}" Style="{StaticResource TextTable}" Height="67" Width="370"></TextBlock>
+                            </StackPanel>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button HorizontalAlignment="Left" Style="{StaticResource ActiveButton}" Click="ReturnBack" Height="67" Width="359" Template="{StaticResource NoMouseOverButtonTemplate}">Назад</Button>
+        </StackPanel>
+    </Grid>
+</Window>
